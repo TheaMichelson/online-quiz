@@ -1,0 +1,9 @@
+CREATE TABLE choices (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    question_id INT,
+    text VARCHAR(255),
+    FOREIGN KEY (question_id) REFERENCES questions(id)
+);
+
+ALTER TABLE choices
+ADD COLUMN is_correct TINYINT(1) DEFAULT 0;  -- 0 = incorrect, 1 = correct
